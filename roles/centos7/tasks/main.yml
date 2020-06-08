@@ -13,14 +13,12 @@
 
 - name: Update!!!
   yum: 
-    name=*
-    state=latest
+    name: *
+    state: latest
 
 - name: Install requirement app
   yum:
-    name="{{ item }}"
-    state= present
-    with_items:
+    name:
       - firewalld
       - git
       - mc
@@ -32,8 +30,27 @@
       - gcc
       - python36u
       - python36u-devel
-
+    state: present
 - name: Enable firewalld
   service:
     name: firewalld
     state: enabled
+
+- name: Config CPAN
+  expect:
+    command: cpan
+    responses:
+      - sudo
+
+- name: Enable firewalld
+  service:
+    name: firewalld
+    enabled: true
+
+- name: Config SELINUX
+  template:
+    src: selinux.j2
+    dest: /etc/selinux/config
+
+- name: Reboot
+  reboot:
