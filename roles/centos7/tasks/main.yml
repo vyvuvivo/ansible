@@ -1,0 +1,39 @@
+---
+# tasks file for centos7
+- name: Set host name
+  command: hostnamectl set-hostname {{ hostname }}
+
+- name: Config /etc/hosts
+  template:
+    src: hosts.j2
+    dst: /etc/hosts
+
+- name: Set timezone
+  command: timedatectl set-timezone Asia/Ho_Chi_Minh
+
+- name: Update!!!
+  yum: 
+    name=*
+    state=latest
+
+- name: Install requirement app
+  yum:
+    name="{{ item }}"
+    state= present
+    with_items:
+      - firewalld
+      - git
+      - mc
+      - htop
+      - nano
+      - perl-CPAN
+      - https://centos7.iuscommunity.org/ius-release.rpm
+      - mariadb-devel
+      - gcc
+      - python36u
+      - python36u-devel
+
+- name: Enable firewalld
+  service:
+    name: firewalld
+    state: enabled

@@ -1,0 +1,24 @@
+---
+# tasks file for fail2ban
+- name: Install Fail2ban
+  yum:
+    name:
+      - epel-release
+      - fail2ban
+      - fail2ban-systemd
+    state: present
+
+- name: Configuration fail2ban
+  template:
+    src: jail.local.j2
+    dest: /etc/fail2ban/jail.local
+
+- name: Enable Fail2ban
+  service:
+    name: fail2ban
+    enabled: yes
+
+- name: Start Fail2ban
+  service:
+    name: fail2ban
+    state: started
