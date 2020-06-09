@@ -3,8 +3,3 @@
   tasks:
     - name: Get all ansible_fact key
       debug: var=ansible_facts
-      
-    - name: Gather limited facts for hosts file
-      setup:
-        gather_subset:
-          - all
