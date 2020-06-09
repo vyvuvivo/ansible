@@ -6,7 +6,6 @@
         gather_subset:
           - '!all'
           - '!any'
-          - hardware
           - facter
     - name: Get all ansible_fact key
       debug: var=ansible_facts
