@@ -1,9 +1,0 @@
-- name: Prepare
-  hosts: all
-  tasks:
-    - name: Gather limited facts for hosts file
-      setup:
-        gather_subset:
-          - '!all'
-          - '!any'
-          - network
