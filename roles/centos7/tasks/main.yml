@@ -13,7 +13,7 @@
 
 - name: Update!!!
   yum: 
-    name: *
+    name: "*"
     state: latest
 
 - name: Install requirement app
