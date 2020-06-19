@@ -1,6 +1,6 @@
 ---
 # tasks file for centos7
-- name: Set host name
+- name: Set hostname
   command: hostnamectl set-hostname {{ hostname }}
 
 - name: Config /etc/hosts
@@ -30,6 +30,7 @@
       - gcc
       - python36u
       - python36u-devel
+      - vim
     state: present
 - name: Enable firewalld
   service:
