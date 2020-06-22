@@ -8,6 +8,9 @@
     src: hosts.j2
     dest: /etc/hosts
 
+- name: display ip-address
+  debug: msg={{ ansible_all_ipv4_addresses }}
+
 - name: Set timezone
   command: timedatectl set-timezone Asia/Ho_Chi_Minh
 
@@ -21,11 +24,11 @@
     name: "{{ required_packages }}"
     state: present
 
-- name: Config CPAN
-  expect:
-    command: cpan
-    responses:
-      - sudo
+#- name: Config CPAN
+#  expect:
+#    command: cpan
+#    responses:
+#      - sudo
 
 - name: Enable firewalld
   service:
