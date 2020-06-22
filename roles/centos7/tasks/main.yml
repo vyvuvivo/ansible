@@ -6,7 +6,7 @@
 - name: Config /etc/hosts
   template:
     src: hosts.j2
-    dst: /etc/hosts
+    dest: /etc/hosts
 
 - name: Set timezone
   command: timedatectl set-timezone Asia/Ho_Chi_Minh
