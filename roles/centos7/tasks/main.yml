@@ -18,7 +18,7 @@
 
 - name: Install requirement app
   yum:
-    name: {{ required_app }}
+    name: "{{ required_app }}"
     state: present
 - name: Enable firewalld
   service:
