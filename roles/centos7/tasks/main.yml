@@ -9,7 +9,7 @@
     dest: /etc/hosts
 
 - name: display ip-address
-  debug: msg={{ ansible_all_ipv4_addresses }}
+  debug: msg={{ ansible_all_ipv4_addresses | ipaddr }}
 
 - name: Set timezone
   command: timedatectl set-timezone Asia/Ho_Chi_Minh
