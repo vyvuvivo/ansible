@@ -25,9 +25,6 @@ required_packages:
   #- nfs-ultils
   #- https://centos7.iuscommunity.org/ius-release.rpm
 
-fw_services:
-  - http
-
 fw_ports:
   - 5665/tcp
   - 443/tcp

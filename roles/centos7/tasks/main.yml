@@ -59,12 +59,19 @@
 - name: FW config - allow services
   firewalld:
     #zone: work
-    service: "{{ fw_services }}"
+    service: "{{ item }}"
     permanent: true
     state: enabled
+  loop:
+    - http
 
 - name: FW config - allow ports
   firewalld:
     port: "{{ fw_ports }}"
     permanent: true
     state: enabled
+
+- name: Reload FW
+  service:
+    name: firewalld
+    state: reloaded
