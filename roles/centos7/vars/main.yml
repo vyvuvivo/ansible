@@ -1,3 +1,16 @@
 ---
 # vars file for centos7
 hostname: centos7
+required_app:
+  - firewalld
+  - git
+  - mc
+  - htop
+  - nano
+  - perl-CPAN
+  - mariadb-devel
+  - gcc
+  - python36u
+  - python36u-devel
+  - vim
+  #- https://centos7.iuscommunity.org/ius-release.rpm

@@ -18,19 +18,7 @@
 
 - name: Install requirement app
   yum:
-    name:
-      - firewalld
-      - git
-      - mc
-      - htop
-      - nano
-      - perl-CPAN
-      - https://centos7.iuscommunity.org/ius-release.rpm
-      - mariadb-devel
-      - gcc
-      - python36u
-      - python36u-devel
-      - vim
+    name: {{ required_app }}
     state: present
 - name: Enable firewalld
   service:
