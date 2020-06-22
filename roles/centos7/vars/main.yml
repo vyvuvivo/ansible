@@ -1,16 +1,35 @@
 ---
 # vars file for centos7
 hostname: centos7
-required_app:
+required_packages:
   - firewalld
   - git
   - mc
   - htop
   - nano
-  - perl-CPAN
   - mariadb-devel
   - gcc
   - python36u
   - python36u-devel
+  - net-tools
   - vim
+  - wget
+  - unzip
+  - curl
+  - ntp
+  - dos2unix
+  - policycoreutils-python
+  - mailx
+  - psmisc
+  - nfs-ultils
+  - net-snmp-python
   #- https://centos7.iuscommunity.org/ius-release.rpm
+
+fw_services:
+  - http
+
+fw_ports:
+  - 5665/tcp
+  - 443/tcp
+  - 3000/tcp
+  - 3306/tcp

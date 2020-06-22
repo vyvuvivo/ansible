@@ -18,12 +18,8 @@
 
 - name: Install requirement app
   yum:
-    name: "{{ required_app }}"
+    name: "{{ required_packages }}"
     state: present
-- name: Enable firewalld
-  service:
-    name: firewalld
-    state: enabled
 
 - name: Config CPAN
   expect:
@@ -57,3 +53,15 @@
     delay: 5
     timeout: 60
 
+- name: FW config - allow services
+  firewalld:
+    #zone: work
+    service: "{{ fw_services }}"
+    permanent: true
+    state: enabled
+
+- name: FW config - allow ports
+  firewalld:
+    port: "{{ fw_ports }}"
+    permanent: true
+    state: enabled
