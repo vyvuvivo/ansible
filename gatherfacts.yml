@@ -1,0 +1,11 @@
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: Gather limited facts
+      setup:
+        gather_subset:
+          - '!all'
+          - '!any'
+          - facter
+    - name: Get all ansible_fact key
+      debug: var=ansible_facts
