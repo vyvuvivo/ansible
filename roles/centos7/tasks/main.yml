@@ -67,9 +67,10 @@
 
 - name: FW config - allow ports
   firewalld:
-    port: "{{ fw_ports }}"
+    port: "{{ item }}"
     permanent: true
     state: enabled
+  loop: "{{ fw_ports }}"
 
 - name: Reload FW
   service:
