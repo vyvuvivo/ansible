@@ -1,5 +1,6 @@
 - name: Prepare
   hosts: all
   roles:
-    - centos7
-    - fail2ban
+    - mariadb
+    #- centos7
+    #- fail2ban
