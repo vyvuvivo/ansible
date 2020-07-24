@@ -1,5 +1,5 @@
 - name: Prepare
   hosts: all
   roles:
-    - centos7
-    - fail2ban
+    - 'roles/centos7'
+    - 'roles/fail2ban'
