@@ -1,4 +1,4 @@
-- name: Prepare
+- name: Install and Set root pwd for mariadb
   hosts: all
   roles:
     - mariadb
