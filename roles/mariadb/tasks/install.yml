@@ -1,6 +1,4 @@
 # roles/mariadb/tasks/install.yml
----
-
 - name: Install MariaDB
     yum:
       name:
