@@ -1,0 +1,9 @@
+---
+# tasks file for mariadb
+#- include_tasks: "{{ item }}"
+#  loop:
+#    - install.yml
+#    - mariadb-root-password.yml
+include_tasks:
+  - install.yml
+  - mariadb-root-password.yml
