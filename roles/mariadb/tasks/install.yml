@@ -3,10 +3,11 @@
   template:
     src: MariaDB.repo
     dest: /etc/yum.repos.d/MariaDB.repo
-    
+
 - name: Install MariaDB
   yum:
     name:
+      - MySQL-python
       - MariaDB-server
       - MariaDB-client
       - MariaDB-common
