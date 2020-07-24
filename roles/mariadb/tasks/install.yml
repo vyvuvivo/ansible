@@ -3,9 +3,9 @@
   yum:
     name:
       - MariaDB-server
-	    - MariaDB-client
-	    - MariaDB-common
-	    - MariaDB-backup
+      - MariaDB-client
+      - MariaDB-common
+      - MariaDB-backup
     state: present
 
 - name: Enable MariaDB
