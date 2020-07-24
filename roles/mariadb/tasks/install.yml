@@ -1,4 +1,9 @@
 # roles/mariadb/tasks/install.yml
+- name: Install MariaDB repo
+  template:
+    src: MariaDB.repo
+    dest: /etc/yum.repos.d/MariaDB.repo
+    
 - name: Install MariaDB
   yum:
     name:
