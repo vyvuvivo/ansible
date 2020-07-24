@@ -1,4 +1,4 @@
-- name: Install and Set root pwd for mariadb
+- name: Install Mariadb
   hosts: all
   roles:
     - mariadb
