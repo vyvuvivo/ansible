@@ -1,2 +1,60 @@
 ---
 # vars file for icinga2
+plugin_dir: /usr/lib64/nagios/plugin
+icinga2_user: icinga
+
+perl_modules:
+  - perl
+  - perl-Net-SNMP
+  - net-snmp-perl
+  - perl-XML-LibXML
+  - perl-JSON
+  - perl-libwww-perl
+  - perl-XML-XPath
+  - perl-Net-Telnet
+  - perl-Net-DNS
+  - perl-DBI
+  - perl-DBD-MySQL
+  - perl-DBD-Pg
+  - perl-CPAN
+
+vmware_lib:
+  - e2fsprogs
+  - e2fsprogs-devel
+  - libuuid-devel
+  - openssl-deve
+  - perl-devel
+  - glibc.i686
+  - zlib.i686
+  - perl-XML-LibXML
+  - libncurses.so.5
+  - perl-Crypt-SSLeay
+
+cpan_modules:
+  - IO::Socket::SSL
+  - Pod::Find
+  - Sys::Statistics::Linux
+  - Readonly
+  - Nagios::Monitoring::Plugin
+  - Monitoring::Plugin
+  - JSON::XS
+  - Net::LDAP
+  - Data::Dump
+  - WWW::Selenium::Util
+  - Test::Harness::Straps
+  - Shell
+  - LWPx::TimedHTTP
+  - WWW::Mechanize::Timed
+  - Proc::ProcessTable
+  - inc::Module::Install
+  - SMS::AQL
+  - Net::Amazon::EC2
+  - Net::Amazon::S3
+  # cpan module for check_wmi_plus
+  - Config::IniFiles
+  - Getopt::Long
+  - DateTime
+  - Number::Format
+  - Data::Dumper
+  - Scalar::Util
+  - Storable
