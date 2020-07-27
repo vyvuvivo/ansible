@@ -34,7 +34,7 @@
     remote_src: yes
 
 - name: install nagvis
-  command: /tmp/nagvis-1.9.21/install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q
+  command: "/tmp/nagvis-1.9.21/install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q"
 # Grafana
 - name: get module Grafana
   git:
