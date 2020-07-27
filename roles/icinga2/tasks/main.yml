@@ -47,24 +47,24 @@
 # Install Centreon Plugin
 - name: Create plugin thirdparty directory
   file:
-    path: {{ plugin_dir }}/thirdparty
+    path: "{{ plugin_dir }}/thirdparty"
     state: directory
 
 - name: Clone Centreon plugin from git
   git:
     repo: https://github.com/centreon/centreon-plugins.git
-    dest: {{ plugin_dir }}/thirdparty
+    dest: "{{ plugin_dir }}/thirdparty"
 
 - name: change permission for centreon plugin
   file:
-    path: {{ plugin_dir }}/thirdparty/centreon-plugins/centreon_plugins.pl
+    path: "{{ plugin_dir }}/thirdparty/centreon-plugins/centreon_plugins.pl"
     mode: 0755
 
 - name: Create  centplugins directory
   file:
     path: /var/lib/centreon/centplugins
-    owner: {{ icinga2_user }}
-    group: {{ icinga2_user }}
+    owner: "{{ icinga2_user }}"
+    group: "{{ icinga2_user }}"
     state: directory
 
 # Install check_wmi_plug
