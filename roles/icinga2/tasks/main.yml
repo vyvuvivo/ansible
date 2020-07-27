@@ -26,7 +26,7 @@
 
 # CPAN Modules
 - name: install App::cpanminus
-  commad: cpan App::cpanminus
+  command: cpan App::cpanminus
 
 - name: install cpan modules
   cpanm:
