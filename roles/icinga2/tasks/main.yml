@@ -53,7 +53,7 @@
 - name: Clone Centreon plugin from git
   git:
     repo: https://github.com/centreon/centreon-plugins.git
-    dest: "{{ plugin_dir }}/thirdparty"
+    dest: "{{ plugin_dir }}/thirdparty/centreon-plugins"
 
 - name: change permission for centreon plugin
   file:
