@@ -1,6 +1,6 @@
 ---
 # vars file for icinga2
-plugin_dir: /usr/lib64/nagios/plugin
+plugin_dir: /usr/lib64/nagios/plugins
 icinga2_user: icinga
 
 perl_modules:
