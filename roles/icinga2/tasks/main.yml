@@ -29,10 +29,10 @@
   commad: cpan App::cpanminus
 
 - name: install cpan modules
-    cpanm:
-      name: "{{ item }}"
-      notest: true
-    loop: "{{ cpan_modules }}" 
+  cpanm:
+    name: "{{ cpan_modules }}"
+    notest: true
+  #loop: "{{ cpan_modules }}" 
 
 # Install icinga2
 - name: Install icinga2
