@@ -58,3 +58,17 @@ cpan_modules:
   - Data::Dumper
   - Scalar::Util
   - Storable
+  # cpan module for vmware sdk
+  - UUID
+  - Time::Duration
+  - File::Basename
+  - HTTP::Date
+  - Time::HiRes
+  - IO::Compress::Zlib::Extra
+  - Time::Piece
+  - Archive::Zip
+  - Text::Template
+  - Path::Class
+  - LWP::Protocol::https
+  - Net::INET6Glue
+  - IO::Socket::INET6
