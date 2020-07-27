@@ -30,7 +30,7 @@
 - name: download and extract nagvis
   unarchive:
     src: https://www.nagvis.org/share/nagvis-1.9.21.tar.gz
-    dest: /tmp/nagvis
+    dest: /tmp
     remote_src: yes
 
 - name: install nagvis
