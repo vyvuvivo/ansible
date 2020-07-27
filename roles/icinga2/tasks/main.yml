@@ -10,27 +10,27 @@
 
 - name: install perl modules
   yum:
-    name: {{ perl_modules }}
+    name: "{{ perl_modules }}"
     state: present
 
 - name: install lib for vmware
   yum:
-    name: {{ vmware_lib }}
+    name: "{{ vmware_lib }}"
     state: present
 
 # Install Java
 - name: Install Oracle Java 12
   yum:
-    name: jdk-12.0.2.x86_64
+    name: "jdk-12.0.2.x86_64"
     state: present
 
 # CPAN Modules
 - name: install App::cpanminus
   commad: cpan App::cpanminus
 
-- name: install capn modules
+- name: install cpan modules
     cpanm:
-      name: {{ cpan_modules }}
+      name: "{{ cpan_modules }}"
       notest: true
 
 # Install icinga2
