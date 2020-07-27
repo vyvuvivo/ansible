@@ -21,7 +21,7 @@
 # Install Java
 - name: Install Oracle Java 12
   yum:
-    name: "jdk-12.0.2.x86_64"
+    name: "https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/12.0.2+10/e482c34c86bd4bf8b56c0b35558996b9/jdk-12.0.2_linux-x64_bin.rpm"
     state: present
 
 # CPAN Modules
