@@ -94,3 +94,13 @@
 # Install check_jmx plugin
 
 # Install monitor plugin
+
+# Check yum update
+
+# Check oracle health
+
+# Setup icinga2 startup
+- name: Setyo icinga2 startup
+  service:
+    name: icinga2
+    enabled: true

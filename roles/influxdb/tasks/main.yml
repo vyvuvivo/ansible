@@ -1,0 +1,35 @@
+---
+# tasks file for influxdb
+- name: enable influxdb repo
+  template:
+    src: influxdb.repo
+    dest: /etc/yum.repos.d/influxdb.repo
+
+- name: install influxdb
+  yum:
+    name: influxdb
+    state: present
+
+- name: enable influxdb
+  service:
+    name: influxdb
+    enabled: true
+
+- name: start influxdb
+  service:
+    name: influxdb
+    state: started
+
+- name: open firewall port for influxdb
+  firewalld:
+    port: "{{ item }}"
+    permanent: true
+    state: enabled
+  loop:
+    - 8086/tcp
+    - 8088/tcp
+
+- name: Reload FW
+  service:
+    name: firewalld
+    state: reloaded

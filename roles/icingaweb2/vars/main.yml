@@ -1,0 +1,20 @@
+---
+# vars file for icingaweb2
+icingaweb2_packages:
+  - httpd
+  - mod_ssl
+  - python-certbot-apache
+  - centos-release-scl
+  - icingaweb2
+  - icingacli
+  - icingaweb2-selinux
+  - sclo-php71-php-pecl-imagick
+  - MariaDB-client
+
+nagvis_packages:
+  - php
+  - php-mysql
+  - php-pdo
+  - php-gd
+  - php-mbstring
+  - graphviz

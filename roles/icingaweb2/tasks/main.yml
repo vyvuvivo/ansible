@@ -1,0 +1,61 @@
+---
+# tasks file for icingaweb2
+- name: Install icingaweb
+  yum:
+    name: "{{ icingaweb2_packages }}"
+    state: present
+
+# Icingaweb2 module
+# Business process
+- name: get module Business process
+  git:
+    repo: https://github.com/Icinga/icingaweb2-module-businessprocess.git
+    dest: /usr/share/icingawe2/modules/businessprocess
+# Director
+- name: get module Director
+  git:
+    repo: https://github.com/Icinga/icingaweb2-module-director.git
+    dest: /usr/share/icingawe2/modules/director
+# Nagvis
+- name: get module Nagvis
+  git:
+    repo: https://github.com/Icinga/icingaweb2-module-nagvis.git
+    dest: /usr/share/icingawe2/modules/nagvis
+
+- name: install required package for Nagvis
+  yum:
+    name: "{{ nagvis_packages }}"
+    state: present
+
+- name: download and extract nagvis
+  unarchive:
+    src: https://www.nagvis.org/share/nagvis-1.9.21.tar.gz
+    dest: /tmp/nagvis
+
+- name: install nagvis
+  command: /tmp/nagvis/install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q
+# Grafana
+- name: get module Grafana
+  git:
+    repo: https://github.com/Mikesch-mp/icingaweb2-module-grafana.git
+    dest: /usr/share/icingawe2/modules/grafana
+
+- name: enable grafana repo
+  template:
+    src: grafana.repo
+    dest: /etc/yum.repos.d/grafana.repo
+
+- name: Install grafana
+  yum:
+    name: grafana
+    state: present
+
+- name: Enable grafana
+  service:
+    name: grafana-server
+    enabled: true
+# Elasticsearch
+- name: get module Elasticsearch
+  git:
+    repo: https://github.com/icinga/icingaweb2-module-elasticsearch.git
+    dest: /usr/share/icingawe2/modules/elasticsearch
