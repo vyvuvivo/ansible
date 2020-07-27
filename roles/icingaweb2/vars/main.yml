@@ -8,7 +8,7 @@ icingaweb2_packages:
   - icingaweb2
   - icingacli
   - icingaweb2-selinux
-  - sclo-php71-php-pecl-imagick
+  - sclo-php72-php-pecl-imagick
   - MariaDB-client
 
 nagvis_packages:
