@@ -40,7 +40,7 @@
     name:
       - icinga2
       - nagios-plugins-all
-      - nagios-plugin-nrpe
+      - nagios-plugins-nrpe
     state: present
 
 # Plugin
