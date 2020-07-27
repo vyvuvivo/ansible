@@ -30,9 +30,9 @@
 
 - name: install cpan modules
   cpanm:
-    name: "{{ cpan_modules }}"
+    name: "{{ item }}"
     notest: true
-  #loop: "{{ cpan_modules }}" 
+  loop: "{{ cpan_modules }}" 
 
 # Install icinga2
 - name: Install icinga2
