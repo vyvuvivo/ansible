@@ -31,6 +31,7 @@
   unarchive:
     src: https://www.nagvis.org/share/nagvis-1.9.21.tar.gz
     dest: /tmp/nagvis
+    remote_src: yes
 
 - name: install nagvis
   command: /tmp/nagvis/install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q
