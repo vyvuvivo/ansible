@@ -19,9 +19,9 @@
     state: present
 
 # Install Java
-- name: Install Oracle Java 14
+- name: Install Oracle Java
   yum:
-    name: "https://download.oracle.com/otn-pub/java/jdk/14.0.2+12/205943a0976c4ed48cb16f1043c5c647/jdk-14.0.2_linux-x64_bin.rpm?AuthParam=1595823825_0255f63bc295fb7e369dd64a45ba8a44"
+    name: "java-latest-openjdk"
     state: present
 
 # CPAN Modules
