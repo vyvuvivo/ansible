@@ -22,7 +22,7 @@ vmware_lib:
   - e2fsprogs
   - e2fsprogs-devel
   - libuuid-devel
-  - openssl-deve
+  - openssl-devel
   - perl-devel
   - glibc.i686
   - zlib.i686
