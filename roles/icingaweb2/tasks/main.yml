@@ -35,8 +35,7 @@
 
 - name: install nagvis
   script:
-    chdir: /tmp/nagvis-1.9.21
-    cmd: ./install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q
+    cmd: /tmp/nagvis-1.9.21/install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q
 # Grafana
 - name: get module Grafana
   git:
