@@ -33,9 +33,13 @@
     dest: /root
     remote_src: yes
 
-- name: install nagvis
-  command:
-    cmd: /root/nagvis-1.9.21/install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q
+#- name: install nagvis
+#  command:
+#    cmd: /root/nagvis-1.9.21/install.sh -s icinga2 -n /usr/share/icinga2 -p /usr/share/nagvis -u apache -g apache -w /etc/httpd/conf.d -i mklivestatus -l tcp:localhost:6558 -a y -c y -r -F -q
+# Error: This installer version only installs NagVis 1.5x or newer
+# cat: share/server/core/defines/global.php: No such file or directory
+# cat: share/server/core/defines/global.php: No such file or directory
+# /root/nagvis-1.9.21/install.sh: line 100: install_lib: No such file or directory
 # Grafana
 - name: get module Grafana
   git:
